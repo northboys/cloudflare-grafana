@@ -6,9 +6,12 @@
 ### Required settings in Cloudflare-grafana
 1. Take the Global API Key
 Login to cloudflare dashboard, click `My Profile`
-Screen Shot 2022-07-25 at 16.07.41.png
+<img width="1312" alt="Screen Shot 2022-07-25 at 16 07 41" src="https://user-images.githubusercontent.com/38155944/180744396-c1509490-3586-4498-9b3f-4e490020b7e5.png">
+
 2. Find our Cloudflare Zone ID
-Screen Shot 2022-07-25 at 16.09.56.png
+<img width="1312" alt="Screen Shot 2022-07-25 at 16 09 56" src="https://user-images.githubusercontent.com/38155944/180744434-2de29ade-da62-4bf0-bdd7-69c5af4c818c.png">
+
+
 3. Install InfluxDB, Telegraf, and Grafana
 4. Export the env variable
 ```
@@ -46,4 +49,10 @@ X-Influxdb-Version: 1.8.10
 X-Request-Id: 97837f77-0bfa-11ed-bf8f-0242ac140002
 Date: Mon, 25 Jul 2022 09:17:23 GMT
 ```
+6. Import grafana dashboard 
+Select the name you want and enter the ID: 12167, which is the unique ID of the Dashboard, or the URL:
+
+- https://grafana.com/grafana/dashboards/12167/
+
+<img width="1703" alt="Screen Shot 2022-07-25 at 14 38 20" src="https://user-images.githubusercontent.com/38155944/180745007-28c30163-744c-407d-8962-33cf910dcbd9.png">
 
