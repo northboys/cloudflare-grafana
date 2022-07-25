@@ -13,6 +13,9 @@ Login to cloudflare dashboard, click `My Profile`
 
 
 3. Install InfluxDB, Telegraf, and Grafana
+```
+docker compose up -d
+```
 4. Export the env variable
 ```
 # Endpoint URL for InfluxDB
