@@ -19,17 +19,18 @@
 ##
 # Configurations
 ##
+
 # Endpoint URL for InfluxDB
-InfluxDBURL="YOURINFLUXSERVERIP" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
-InfluxDBPort="8086" #Default Port
-InfluxDB="telegraf" #Default Database
-InfluxDBUser="USER" #User for Database
-InfluxDBPassword="PASSWORD" #Password for Database
+InfluxDBURL="$INFLUXDB_URL" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
+InfluxDBPort="$INFLUXDB_PORT" #Default Port
+InfluxDB="$INFLUXDB_DB" #Default Database
+InfluxDBUser="$INFLUXDB_USER" #User for Database
+InfluxDBPassword="$INFLUXDB_PASSWD" #Password for Database
 
 # Endpoint URL for login action
-cloudflareapikey="YOURAPIKEY"
-cloudflarezone="YOURZONEID"
-cloudflareemail="YOUREMAIL"
+cloudflareapikey="$CLOUDFLARE_API_KEY"
+cloudflarezone="$CLOUDFLARE_ZONE"
+cloudflareemail="$CLOUDFLARE_EMAIL"
 
 # Time variables
 back_seconds=60*60*24*7  # 24 hours
