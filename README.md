@@ -62,3 +62,30 @@ Select the name you want and enter the ID: 12167, which is the unique ID of the 
 
 <img width="1703" alt="Screen Shot 2022-07-25 at 14 38 20" src="https://user-images.githubusercontent.com/38155944/180745007-28c30163-744c-407d-8962-33cf910dcbd9.png">
 
+8. Using crontab to execute script
+```
+crontab -e 0 0 * * * /home/user/cloudflare-analytics.sh >> /var/log/cloudflare.log 2>&1
+```
+## Running on K8s [optional]
+1. Build docker image
+```
+# Change ENV on Dockerfile
+ENV INFLUXDB_URL="YOURINFLUXSERVERIP" 
+ENV INFLUXDB_PORT="8086" 
+ENV INFLUXDB_DB="influx" 
+ENV INFLUXDB_USER="admin" 
+ENV INFLUXDB_PASSWD="admin123" 
+ENV CLOUDFLARE_API_KEY="YOURAPIKEY"
+ENV CLOUDFLARE_ZONE="YOURZONEID"
+ENV CLOUDFLARE_EMAIL="YOUREMAIL"
+
+# Build Docker image
+docker build -t yourrepo/cloudflare-analytic-grafana:0.1 . --no-cache
+
+# Push to your repo
+docker push yourrepo/cloudflare-analytic-grafana:0.1
+```
+2. Deploy k8s cronjob
+```
+kubectl apply -f k8s-cronjob.yaml
+```
